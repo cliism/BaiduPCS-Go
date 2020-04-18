@@ -93,7 +93,7 @@ func main() {
 	defer pcsconfig.Config.Close()
 
 	app := cli.NewApp()
-	app.Name = "BaiduPCS-Go"
+	app.Name = "PCS"
 	app.Version = Version
 	app.Author = "iikira/BaiduPCS-Go: https://github.com/iikira/BaiduPCS-Go"
 	app.Copyright = "(c) 2016-2020 iikira."
@@ -289,7 +289,7 @@ func main() {
 			if activeUser.Name != "" {
 				// 格式: BaiduPCS-Go:<工作目录> <百度ID>$
 				// 工作目录太长时, 会自动缩略
-				prompt = app.Name + ":" + converter.ShortDisplay(path.Base(activeUser.Workdir), NameShortDisplayNum) + " " + activeUser.Name + "$ "
+				prompt = app.Name + ":" + converter.ShortDisplay(path.Base(activeUser.Workdir), NameShortDisplayNum) + "$ "
 			} else {
 				// BaiduPCS-Go >
 				prompt = app.Name + " > "
